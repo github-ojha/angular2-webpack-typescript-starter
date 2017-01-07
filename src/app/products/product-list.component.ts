@@ -8,6 +8,7 @@ export class ProductListComponent{
     pageTitle : string = "Products List";
     imageWidth : number = 50;
     imageMargin: number = 50;
+    showImage : boolean = false;
     products : any[] = [{
         "productId": 2,
         "productName": "Garden Cart",
@@ -38,4 +39,8 @@ export class ProductListComponent{
         "starRating": 3.7,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     }];
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
