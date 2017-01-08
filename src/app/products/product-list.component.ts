@@ -1,17 +1,17 @@
-import {Component} from '@angular/core';
-import {IProduct} from './product';
+import { Component } from '@angular/core';
+import { IProduct } from './product';
 @Component({
-    selector : 'pm-products',
-    templateUrl : 'src/app/products/product-list.component.html',
-    styleUrls : ['src/app/products/product-list.component.css']
+    selector: 'pm-products',
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent{
-    pageTitle : string = "Products List";
-    imageWidth : number = 50;
+export class ProductListComponent {
+    pageTitle: string = "Products List";
+    imageWidth: number = 50;
     imageMargin: number = 50;
-    showImage : boolean = false;
-    listFilter : string = 'cart';
-    products : IProduct[] = [{
+    showImage: boolean = false;
+    listFilter: string = 'cart';
+    products: IProduct[] = [{
         "productId": 2,
         "productName": "Garden Cart",
         "productCode": "GDN-0023",
@@ -44,5 +44,9 @@ export class ProductListComponent{
 
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle += message;
     }
 }
