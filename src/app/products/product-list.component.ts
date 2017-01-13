@@ -4,7 +4,7 @@ import { ProductService } from './product.service';
 
 @Component({
     selector: 'pm-products',
-    moduleId : module.id.toString(),
+    moduleId: module.id.toString(),
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -14,14 +14,17 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 50;
     showImage: boolean = false;
     listFilter: string = 'cart';
-    products : IProduct[];
-    constructor(private _productService : ProductService){
+    products: IProduct[];
+    errorMessage: string = ''
+    constructor(private _productService: ProductService) {
     }
 
-    ngOnInit() : void {
-          this.products =  this._productService.getProducts();
+    ngOnInit(): void {
+        this._productService.getProducts()
+            .subscribe(products => this.products = products,
+            error => this.errorMessage = <any>error);
     }
-    
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
