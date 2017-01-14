@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
-import {ProductService} from '../../src/app/products/product.service'
+import { ProductService } from '../../src/app/products/product.service'
+
 @Component({
   selector: 'my-app',
-  moduleId : module.id.toString(),
+  moduleId: module.id.toString(),
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers : [ProductService]
+  providers: [ProductService]
 })
-export class AppComponent { }
+export class AppComponent {
+  pageTitle: string = "Coffee Shop app";
+}

@@ -1,5 +1,17 @@
 <main>
-  <h1>Angular App with Webpack</h1>
-  
-  <pm-products>loading.....</pm-products>
+  <h1>Angular App with Webpack</h1> <!-- removed selector as it is going to be used by routing now-->
+ <div>
+        <nav class='navbar navbar-default'>
+            <div class='container-fluid'>
+                <a class='navbar-brand'>{{pageTitle}}</a>
+                <ul class='nav navbar-nav'>
+                    <li><a [routerLink]="['/welcome']">Home</a></li>
+                    <li><a [routerLink]="['/products']">Product List</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class='container'>
+            <router-outlet></router-outlet>
+        </div>
+     </div>
 </main>
