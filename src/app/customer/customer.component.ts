@@ -17,6 +17,16 @@ export class CustomerComponent implements OnInit {
             email: new FormControl(),
             sendCatalog: new FormControl(true)
         });
+
+        // set values initially - need to set all formcontrol values 
+        this.customerForm.setValue({
+            firstName : "Neeraj",
+            lastName : "Ojha",
+            email: 'nkojha@gmail.com',
+            sendCatalog: false
+        })
+        //only few FormControl values can be set by patchValue 
+        this.customerForm.patchValue({email:"neeraj.ojha@yahoo.com"});
     }
 
     customerForm: FormGroup;
